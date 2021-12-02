@@ -11,15 +11,15 @@
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
 		/** if the current node is empty*/
-    if (tree == NULL)
-        return;
+	if (tree == NULL || func == NULL)
+		return;
 
 	/** Traverse the left subtree*/
-    binary_tree_preorder(tree->left, (*func));
+	binary_tree_preorder(tree->left, (*func));
 
     /** Traverse the right subtree*/
-    binary_tree_preorder(tree->right, (*func));
+	binary_tree_preorder(tree->right, (*func));
 
-    func(tree->n);
+	func(tree->n);
 
 }
