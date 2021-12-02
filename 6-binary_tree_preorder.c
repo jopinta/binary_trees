@@ -11,7 +11,7 @@
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
 		/** if the current node is empty*/
-	if (tree == NULL || func == NULL)
+	if (!tree || !func)
 		return;
 	func(tree->n);
 	/** Traverse the left subtree*/
@@ -19,7 +19,5 @@ void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 
     /** Traverse the right subtree*/
 	binary_tree_preorder(tree->right, (*func));
-
-	func(tree->n);
 
 }
